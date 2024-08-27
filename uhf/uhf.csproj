@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A805BC48-66DF-4034-8D91-023954EE996F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>uhf</RootNamespace>
+    <AssemblyName>uhf</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Owf.Controls.DigitalDisplayControl">
+      <HintPath>..\..\ETC\CS\digital_display_control\Owf.Controls.DigitalDisplayControl\bin\Debug\Owf.Controls.DigitalDisplayControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comm\SerialSlave.cs" />
+    <Compile Include="MasterComDrv.cs" />
+    <Compile Include="Comm\Serial.cs" />
+    <Compile Include="Comm\SerialMaster.cs" />
+    <Compile Include="Comm\SerialSelectDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comm\SerialSelectDlg.designer.cs">
+      <DependentUpon>SerialSelectDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\UdpSocket.cs" />
+    <Compile Include="Define.cs" />
+    <Compile Include="kFunc\AxBtn.cs" />
+    <Compile Include="kFunc\Clock.cs" />
+    <Compile Include="kFunc\Colors.cs" />
+    <Compile Include="kFunc\Dir.cs" />
+    <Compile Include="kFunc\Func.cs" />
+    <Compile Include="kFunc\IniFile.cs" />
+    <Compile Include="kFunc\Parsing.cs" />
+    <Compile Include="kFunc\Spline\ArrayUtil.cs" />
+    <Compile Include="kFunc\Spline\CubicSpline.cs" />
+    <Compile Include="kFunc\Spline\TriDiagonalMatrix.cs" />
+    <Compile Include="kFunc\UsbInfo.cs" />
+    <Compile Include="kIo.cs" />
+    <Compile Include="kMot.cs" />
+    <Compile Include="Logs\Log.cs" />
+    <Compile Include="Pad\EditPadFunc.cs" />
+    <Compile Include="SlaveComDrv.cs" />
+    <Compile Include="ViewMasterDlg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewMasterDlg.Designer.cs">
+      <DependentUpon>ViewMasterDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\ErrorMsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\ErrorMsgForm.designer.cs">
+      <DependentUpon>ErrorMsgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\InformationMsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\InformationMsgForm.designer.cs">
+      <DependentUpon>InformationMsgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\MsgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\MsgDlg.designer.cs">
+      <DependentUpon>MsgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\MsgFunc.cs" />
+    <Compile Include="MsgBox\MsgYesNoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\MsgYesNoForm.designer.cs">
+      <DependentUpon>MsgYesNoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\ShowMsgProc.cs" />
+    <Compile Include="MsgBox\WarningMsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\WarningMsgForm.designer.cs">
+      <DependentUpon>WarningMsgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pad\EditPadDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pad\EditPadDlg.designer.cs">
+      <DependentUpon>EditPadDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pad\NumPadDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pad\NumPadDlg.designer.cs">
+      <DependentUpon>NumPadDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pad\NumPadFunc.cs" />
+    <Compile Include="Param.cs" />
+    <Compile Include="ParamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParamForm.designer.cs">
+      <DependentUpon>ParamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParamFunc.cs" />
+    <Compile Include="ParamSys.cs" />
+    <Compile Include="ViewMasterSubDlg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewMasterSubDlg.Designer.cs">
+      <DependentUpon>ViewMasterSubDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSlaveDlg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewSlaveDlg.Designer.cs">
+      <DependentUpon>ViewSlaveDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Comm\SerialSelectDlg.resx">
+      <DependentUpon>SerialSelectDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewMasterDlg.resx">
+      <DependentUpon>ViewMasterDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\ErrorMsgForm.resx">
+      <DependentUpon>ErrorMsgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\InformationMsgForm.resx">
+      <DependentUpon>InformationMsgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\MsgDlg.resx">
+      <DependentUpon>MsgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\MsgYesNoForm.resx">
+      <DependentUpon>MsgYesNoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\WarningMsgForm.resx">
+      <DependentUpon>WarningMsgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pad\EditPadDlg.resx">
+      <DependentUpon>EditPadDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pad\NumPadDlg.resx">
+      <DependentUpon>NumPadDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParamForm.resx">
+      <DependentUpon>ParamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ViewMasterSubDlg.resx">
+      <DependentUpon>ViewMasterSubDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSlaveDlg.resx">
+      <DependentUpon>ViewSlaveDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resource\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxBTNENHLib4">
+      <Guid>{40B5CE80-C5A8-11D2-8183-00002440DFD8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="BTNENHLib4">
+      <Guid>{40B5CE80-C5A8-11D2-8183-00002440DFD8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+    <Content Include="Windows Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
